@@ -43,7 +43,7 @@ em{font-family:var(--serif);font-weight:600;letter-spacing:-.045em}
 .bar{height:77px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
 .brand{display:inline-flex;align-items:center;justify-self:start;flex:none;height:68px;width:165px;margin-left:-18px}
 .brand img{height:auto;object-fit:contain}
-nav{display:flex;align-items:center;gap:clamp(20px,3vw,43px);font-weight:600;font-size:14px}
+nav{display:flex;align-items:center;gap:clamp(13px,2.3vw,34px);font-weight:600;font-size:14px}
 nav a:hover{color:var(--gold)}
 .header-cta{justify-self:end;background:#0c162c55;border-color:#ffffff87;color:#fff;min-height:42px}
 .header-cta:hover{background:#fff;color:var(--navy)}

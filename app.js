@@ -1,4 +1,4 @@
-const base = 'https://ranwelitours.com/';
+const base = 'tours/';
 const tours = [
   ['round', 'Sri Lanka in 8 Days', '8 days · 7 nights', 'Explore ancient cities, climb Sigiriya and head into the island’s tea country.', 'highlands', 'Travelers by the Nine Arch Bridge railway in Ella', 'sri-lanka-8-day-tour-7-nights/'],
   ['round', 'Sri Lanka in 4 Days', '4 days · 3 nights', 'A short island circuit with time for history, temples and lush inland scenery.', 'heritage', 'Travelers visiting the ruins of Polonnaruwa', 'sri-lanka-4-day-tour-package/'],
@@ -6,7 +6,7 @@ const tours = [
   ['round', 'Sri Lanka in 6 Days', '6 days · 5 nights', 'Explore more of Sri Lanka on a private island journey with your own chauffeur guide.', 'safari', 'Jeep safari across wide grasslands', 'sri-lanka-6-day-tour-package/'],
   ['round', 'Sri Lanka in 13 Days', '13 days · 12 nights', 'Take the longer route through striking landscapes, historic landmarks and coastal towns.', 'coast', 'Travelers by the coast', 'sri-lanka-13-days-tour-12-nights/'],
   ['day', 'Kandy City Tour', 'Full day', 'Visit the Temple of the Sacred Tooth Relic, the botanical gardens and Kandy Lake.', 'kandy', 'Travelers at a temple in Kandy', 'kandy-city-tour/'],
-  ['day', 'Nuwara Eliya from Kandy', 'Day trip', 'Spend a day among tea estates and cool highland scenery on the way to Nuwara Eliya.', 'tea', 'Picking leaves at a tea plantation', 'nuwara-eliya-city-tour-2/'],
+  ['day', 'Nuwara Eliya from Kandy', 'Day trip', 'Spend a day among tea estates and cool highland scenery on the way to Nuwara Eliya.', 'tea', 'Picking leaves at a tea plantation', 'kandy-to-nuwara-eliya-city-tour/'],
   ['day', 'Ella Day Tour', 'Day trip', 'Explore Ella and its hill-country views, waterfalls and railway landmarks.', 'highlands', 'Travelers by the Nine Arch Bridge railway in Ella', 'ella-city-tour/'],
   ['special', 'East Coast Tours', 'Special interest', 'Shape a coastal break around destinations like Trincomalee and Pasikudah.', 'coast', 'Travelers on a beach in Sri Lanka', 'east-coast-tours-sri-lanka/']
 ];
@@ -73,18 +73,6 @@ showTours();
 document.querySelectorAll('[data-interest]').forEach(link => link.addEventListener('click', () => {
   interest.value = link.dataset.interest;
 }));
-
-const menu = document.querySelector('.menu');
-const navigation = document.querySelector('#site-nav');
-function closeMenu() { menu.setAttribute('aria-expanded', 'false'); }
-menu.addEventListener('click', () => menu.setAttribute('aria-expanded', String(menu.getAttribute('aria-expanded') === 'false')));
-navigation.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
-    closeMenu();
-    menu.focus();
-  }
-});
 
 const dialog = document.querySelector('#lightbox');
 const dialogImage = dialog.querySelector('img');
