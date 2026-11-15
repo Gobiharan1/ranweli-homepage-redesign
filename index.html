@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore Sri Lanka with Ranweli Tours. Private day trips, multi-day journeys and transfers with a local team that plans around you.">
+<title>Ranweli Tours — Your trusted Sri Lanka Tour Agent</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top"><img src="assets/ranweli-logo.png" alt="Ranweli Tours home" width="300" height="150"></a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-nav" aria-label="Main navigation">
+      <a href="#journeys">Tours</a><a href="#experiences">Experiences</a><a href="#about">About us</a><a href="#gallery">Gallery</a>
+    </nav>
+    <a class="button header-cta" href="#plan">Plan my trip <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-photos" aria-hidden="true">
+      <img class="hero-img" src="assets/hero-3521.webp" alt="" fetchpriority="high">
+    </div>
+    <div class="wrap hero-inner">
+      <h1 id="hero-title">Your trusted <em>Sri Lanka</em><br>Tour Agent</h1>
+      <div class="hero-intro">
+        <p>Discover Sri Lanka on a personalized journey with Ranweli Tours. Local expertise, comfortable travel and a warm Sri Lankan welcome, from your first pickup to your last stop.</p>
+        <a class="button light" href="#journeys">Explore Our Tour Packages <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="wrap hero-bottom">
+      <a class="hero-scroll" href="#journeys" aria-label="Scroll down to tours"><span aria-hidden="true"></span></a>
+      <div class="hero-gallery" hidden>
+        <p class="photo-label" id="hero-caption">Sri Lanka · Hill country</p>
+        <div class="hero-controls" role="group" aria-label="Hero photos">
+          <button type="button" data-photo="hero-3521" data-position="43% 38%" data-caption="Sri Lanka · Hill country" aria-label="Show the hill country" aria-pressed="true"><img src="assets/hero-3521-thumb.webp" alt=""></button>
+          <button type="button" data-photo="hero-1327" data-position="61% 46%" data-caption="Sri Lanka · Temple visit" aria-label="Show the temple visit" aria-pressed="false"><img src="assets/hero-1327-thumb.webp" alt=""></button>
+          <button type="button" data-photo="hero-3499" data-position="50% 46%" data-caption="Matale · Hindu temple" aria-label="Show the Matale temple" aria-pressed="false"><img src="assets/hero-3499-thumb.webp" alt=""></button>
+          <button type="button" data-photo="hero-1152" data-position="47% 29%" data-caption="Sigiriya · Museum visit" aria-label="Show the Sigiriya Museum" aria-pressed="false"><img src="assets/hero-1152-thumb.webp" alt=""></button>
+          <button type="button" data-photo="hero-2135" data-position="51% 42%" data-caption="Sri Lanka · Ancient stupa" aria-label="Show the ancient stupa" aria-pressed="false"><img src="assets/hero-2135-thumb.webp" alt=""></button>
+          <button type="button" data-photo="hero-4234" data-position="54% 58%" data-caption="Sri Lanka · Forest visit" aria-label="Show the forest visit" aria-pressed="false"><img src="assets/hero-4234-thumb.webp" alt=""></button>
+          <button type="button" class="hero-play">Pause</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section journeys" id="journeys" aria-labelledby="journey-title">
+    <div class="wrap centered">
+      <h2 id="journey-title">Discover <em>our most<br> popular</em> tours</h2>
+      <div class="filters" role="group" aria-label="Filter tours">
+        <button type="button" data-filter="all" aria-pressed="true">Featured</button><button type="button" data-filter="round" aria-pressed="false">Multi-day</button><button type="button" data-filter="day" aria-pressed="false">Day trips</button><button type="button" data-filter="special" aria-pressed="false">Special tours</button>
+      </div>
+    </div>
+    <div class="tour-stage" id="tour-grid"></div>
+    <p class="sr-only" id="tour-status" role="status"></p>
+    <div class="tour-controls wrap">
+      <button type="button" id="tour-prev" aria-label="Previous tour">←</button>
+      <a class="text-link" href="https://ranwelitours.com/sri-lanka-trip-packages/">View more tours</a>
+      <button type="button" id="tour-next" aria-label="Next tour">→</button>
+    </div>
+  </section>
+  <section class="wrap section about" id="about" aria-labelledby="about-title">
+    <div class="about-head">
+      <h2 id="about-title">See Sri Lanka <em>with locals.</em></h2>
+      <p>The Ranweli team can help plan your route, book hotels and arrange a private ride from the moment you land.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service service-custom">
+        <h3>Tailor-made journeys</h3>
+        <p>Choose the places, pace and experiences. We’ll help put together an itinerary for your group.</p>
+        <a class="button light" href="#plan">Plan a custom trip <span aria-hidden="true">↗</span></a>
+      </article>
+      <figure class="service service-photo">
+        <img loading="lazy" src="assets/team.webp" alt="A Ranweli chauffeur guide and two travelers at Dambulla">
+        <figcaption>On the road with Ranweli · Dambulla</figcaption>
+      </figure>
+      <article class="service service-transfer">
+        <h3>Private transfers</h3>
+        <p>Airport pickups and island-wide rides in cars, vans or buses, with a local chauffeur guide.</p>
+        <a class="text-link" href="https://ranwelitours.com/transfer/">Explore transfers ↗</a>
+      </article>
+    </div>
+  </section>
+  <section class="experience section" id="experiences" aria-labelledby="experience-title">
+    <div class="wrap">
+      <div class="centered"><h2 id="experience-title">Find your side of <em>Sri Lanka</em></h2><p>Choose an experience to add to your trip enquiry.</p></div>
+      <div class="experience-grid">
+        <a href="#plan" data-interest="Ancient sites and temples"><div><small>CULTURE &amp; HERITAGE</small><h3>Ancient kingdoms</h3><p>Rock fortresses and sacred temples.</p><span aria-hidden="true">↗</span></div><img loading="lazy" src="assets/sigiriya.webp" alt=""></a>
+        <a href="#plan" data-interest="Tea country and scenic trains"><div><small>HILL COUNTRY</small><h3>Tea &amp; mountain trails</h3><p>Tea estates, railways and highland walks.</p><span aria-hidden="true">↗</span></div><img loading="lazy" src="assets/tea.webp" alt=""></a>
+        <a href="#plan" data-interest="Wildlife and jeep safaris"><div><small>WILDLIFE</small><h3>Into the wild</h3><p>Jeep safaris and open grasslands.</p><span aria-hidden="true">↗</span></div><img loading="lazy" src="assets/safari.webp" alt=""></a>
+        <a href="#plan" data-interest="Beaches and coastal towns"><div><small>COAST &amp; BEACHES</small><h3>By the ocean</h3><p>Beach days and coastal towns.</p><span aria-hidden="true">↗</span></div><img loading="lazy" src="assets/coast.webp" alt=""></a>
+      </div>
+    </div>
+  </section>
+  <section class="gallery-section section" id="gallery" aria-labelledby="gallery-title">
+    <div class="wrap centered"><h2 id="gallery-title">Moments <em>from the road</em></h2><p>Photos from journeys with Ranweli Tours.</p></div>
+    <div class="gallery-stage"><div class="gallery-grid" id="photos"></div></div>
+    <div class="wrap gallery-actions">
+      <button class="button dark" id="all-photos" type="button">Open photo gallery <span aria-hidden="true">↗</span></button>
+      <a class="text-link" href="https://www.tripadvisor.com/Attraction_Review-g11999643-d27109840-Reviews-Ranweli_Tour-Minuwangoda_Western_Province.html">Read traveler reviews ↗</a>
+    </div>
+  </section>
+  <section class="plan section" id="plan" aria-labelledby="plan-title">
+    <div class="wrap plan-grid">
+      <div><h2 id="plan-title">Let’s plan <em>your Sri Lanka</em></h2><p>Share what you have in mind and send it to the Ranweli team on WhatsApp. We’ll talk through the route, availability and pricing with you.</p><a class="text-link" href="tel:+94762566946">+94 76 256 6946</a></div>
+      <form id="enquiry">
+        <label>Your name<input name="name" autocomplete="name" placeholder="Full name" maxlength="100" required></label>
+        <label>Travel month<input name="month" type="month"></label>
+        <label>Number of travelers<input name="travelers" type="number" min="1" max="999" inputmode="numeric" value="2" required></label>
+        <label>I'm interested in<select name="interest" id="interest"></select></label>
+        <label class="full">Anything else? <span>(optional)</span><textarea name="notes" rows="3" maxlength="500" placeholder="Places you’d like to see, travel dates or pickup details"></textarea></label>
+        <button class="button gold full" type="submit">Continue to WhatsApp <span aria-hidden="true">↗</span></button>
+        <small class="full form-note">WhatsApp opens with your message ready to review and send.</small>
+      </form>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap footer-row">
+    <a class="brand" href="#top"><img src="assets/ranweli-logo.png" alt="Ranweli Tours home" width="300" height="150"></a>
+    <div><a href="https://ranwelitours.com/blog/">Travel blog ↗</a><a href="https://ranwelitours.com/contact-us/">Contact ↗</a><a href="mailto:ranwelitour@gmail.com">Email ↗</a></div>
+    <small>© Ranweli Tours</small>
+  </div>
+</footer>
+<dialog id="lightbox" aria-labelledby="photo-caption">
+  <button class="close" type="button" aria-label="Close gallery" autofocus>×</button>
+  <button class="prev" type="button" aria-label="Previous photo">‹</button>
+  <figure><img alt=""><figcaption id="photo-caption" aria-live="polite"></figcaption></figure>
+  <button class="next" type="button" aria-label="Next photo">›</button>
+</dialog>
+</body>
+</html>
