@@ -197,3 +197,29 @@ reducedMotion.addEventListener('change', event => {
 document.addEventListener('visibilitychange', scheduleHero);
 document.querySelector('.hero-gallery').hidden = false;
 scheduleHero();
+
+const reviewTrack = document.querySelector('#review-track');
+const reviewPrevious = document.querySelector('[data-review-prev]');
+const reviewNext = document.querySelector('[data-review-next]');
+
+function updateReviewControls() {
+  const maxScroll = reviewTrack.scrollWidth - reviewTrack.clientWidth;
+  reviewPrevious.disabled = reviewTrack.scrollLeft < 2;
+  reviewNext.disabled = reviewTrack.scrollLeft >= maxScroll - 2;
+}
+
+function scrollReviews(direction) {
+  const firstCard = reviewTrack.querySelector('.review-card');
+  const gap = parseFloat(getComputedStyle(reviewTrack).columnGap) || 0;
+  reviewTrack.scrollBy({
+    left: direction * (firstCard.getBoundingClientRect().width + gap),
+    behavior: reducedMotion.matches ? 'instant' : 'smooth'
+  });
+}
+
+reviewPrevious.addEventListener('click', () => scrollReviews(-1));
+reviewNext.addEventListener('click', () => scrollReviews(1));
+reviewTrack.addEventListener('scroll', updateReviewControls, { passive: true });
+window.addEventListener('resize', updateReviewControls);
+document.querySelector('.review-controls').hidden = false;
+updateReviewControls();
