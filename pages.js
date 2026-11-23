@@ -36,3 +36,26 @@ if (enquiry) {
     route.hidden = false;
   });
 }
+
+const revealSections = document.querySelectorAll('.about-page [data-reveal]');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+if (revealSections.length && 'IntersectionObserver' in window && !prefersReducedMotion.matches) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('reveal-pending');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealSections.forEach(section => {
+    section.classList.add('reveal-pending');
+    revealObserver.observe(section);
+  });
+  prefersReducedMotion.addEventListener('change', event => {
+    if (event.matches) {
+      revealObserver.disconnect();
+      revealSections.forEach(section => section.classList.remove('reveal-pending'));
+    }
+  });
+}

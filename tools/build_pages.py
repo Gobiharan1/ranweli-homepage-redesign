@@ -299,21 +299,74 @@ def build_transfers():
 
 def build_company_pages():
     description = "Meet the Sri Lanka team behind Ranweli Tours and see how they plan private journeys around the island."
+    about_photos = (
+        ("hero-3521", "A hill-country walk with Ranweli Tours"),
+        ("hero-3499", "Travelers visiting a temple in Matale"),
+        ("group", "A group exploring Sri Lanka with their local guide"),
+        ("coconuts", "A roadside stop for king coconuts"),
+        ("hero-4234", "Travelers on a forest visit"),
+    )
+    photo_strip = "".join(
+        f'<figure><img src="{{root}}assets/{photo}.webp" alt="{caption}" loading="lazy"></figure>'
+        for photo, caption in about_photos
+    )
+    values = (
+        ("A journey shaped around you",
+         "Start with the places you’re curious about. We’ll help connect them into a route that suits your dates, group and pace, whether you have a day in Kandy or two weeks to explore the island.",
+         "hero-3521", "A traveler and guide in Sri Lanka’s hill country", "Explore our tours", "tours/"),
+        ("Local people, closer connections",
+         "Our Sri Lankan team works with local businesses and communities along the way. From temple visits to a shared meal, these are opportunities to spend time with the people who know each place.",
+         "local-lunch", "A Sri Lankan meal shared outdoors", "See our travel moments", "gallery/"),
+        ("Support from pickup to your last stop",
+         "Talk to our team about airport pickups, private transfers and the days in between. We’ll help arrange a suitable vehicle and discuss your route and travel details before you set off.",
+         "transport", "Travelers beside a Ranweli Tours vehicle", "Arrange a transfer", "transfers/"),
+    )
+    value_rows = "".join(
+        f'<details class="about-value" name="ranweli-values"{" open" if index == 0 else ""}>'
+        f'<summary><h3>{title}</h3><span class="value-toggle" aria-hidden="true"></span></summary>'
+        f'<div class="value-content"><div><p>{copy}</p><a class="text-link" href="{{root}}{url}">{label}</a></div>'
+        f'<img src="{{root}}assets/{photo}.webp" alt="{alt}" loading="lazy"></div></details>'
+        for index, (title, copy, photo, alt, label, url) in enumerate(values)
+    )
     write_page("about", "About Ranweli Tours", description,
-               hero("See Sri Lanka <em>with locals</em>", description, "team", home_breadcrumb("About us"))
+               '<div class="about-page">'
+               + hero("See Sri Lanka <em>with locals</em>",
+                      "Private journeys. Local connections. Memories from the road.",
+                      "hero-3521", home_breadcrumb("About us"),
+                      button("Get to know us", "#our-story", "light"), "center 38%")
                + f"""
-<section class="section wrap story">
-  <div><h2>Meet <em>Ranweli Tours</em></h2>
-    <p>Founded by Nilanka Lakmal, Ranweli Tours is a Sri Lankan team that helps travelers plan private trips around the island. The team works with local businesses and communities to arrange visits and experiences along each route.</p>
-    <p>Start with a published itinerary or tell the team what interests you. They can shape your travel days around temples, tea country, wildlife and the coast, and arrange a suitable vehicle for your group.</p>
-    {source_link("about-us", "Read more about Ranweli Tours")}
+<section class="about-intro section" id="our-story" aria-labelledby="about-statement">
+  <div class="wrap centered about-statement" data-reveal>
+    <p class="about-eyebrow">ABOUT RANWELI</p>
+    <h2 id="about-statement">Every journey has a route.<br><em>Yours should have a story.</em></h2>
+    <p>Ancient cities, mountain mornings and the people you meet along the way. Discover Sri Lanka at your own pace, with a local team by your side.</p>
   </div>
-  <img src="{{root}}assets/group.webp" alt="Travelers on a Sri Lanka trip with Ranweli Tours" loading="lazy">
+  <div class="about-photo-strip" aria-label="Journeys with Ranweli Tours" data-reveal>{photo_strip}</div>
+  <div class="wrap about-story" data-reveal>
+    <p class="about-eyebrow">OUR STORY</p>
+    <div><h2>A local team.<br><em>A personal way to travel.</em></h2>
+      <p>Founded by Nilanka Lakmal, Ranweli Tours is a Sri Lankan team that helps travelers plan private trips around the island. The team works with local businesses and communities to arrange visits and experiences along each route.</p>
+      <p>Start with a published itinerary or tell the team what interests you. They can shape your travel days around temples, tea country, wildlife and the coast, and arrange a suitable vehicle for your group.</p>
+    </div>
+  </div>
 </section>
-<div class="wrap service-grid company-services">
-  <article class="service service-custom"><h3>Tailor-made journeys</h3><p>Share the places you want to see and the time you have.</p>{button("Plan my trip", "{root}contact/", "light")}</article>
-  <article class="service service-transfer"><h3>Tour packages</h3><p>Browse day trips, island circuits and specialist itineraries.</p>{button("See tours", "{root}tours/")}</article>
-  <article class="service service-transfer"><h3>Private transfers</h3><p>Arrange airport pickups and rides between destinations.</p>{button("See transfers", "{root}transfers/")}</article>
+<section class="about-values section" aria-labelledby="about-values-title">
+  <div class="wrap">
+    <div class="centered about-values-heading" data-reveal>
+      <p class="about-eyebrow">TRAVEL WITH RANWELI</p>
+      <h2 id="about-values-title">The details that make<br><em>the journey yours.</em></h2>
+    </div>
+    <div class="about-value-list" data-reveal>{value_rows}</div>
+  </div>
+</section>
+<section class="about-finale section">
+  <div class="wrap centered" data-reveal>
+    <p class="about-eyebrow">YOUR NEXT CHAPTER</p>
+    <h2>Where would you<br><em>like to go?</em></h2>
+    <p>Bring your ideas. We’ll help you find the route.</p>
+    {button("Let’s plan your trip", "{root}contact/", "gold")}
+  </div>
+</section>
 </div>""", "about/")
 
     gallery = (
